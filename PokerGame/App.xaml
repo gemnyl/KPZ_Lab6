@@ -1,0 +1,30 @@
+﻿<Application x:Class="PokerGame.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PokerGame"
+             xmlns:asd="clr-namespace:PokerGame.Data"
+             xmlns:views="clr-namespace:PokerGame.Views"
+             xmlns:viewModels="clr-namespace:PokerGame.ViewModels"
+
+
+             
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type asd:PlayerDbViewModel }">
+            <views:StartView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:GameViewModel}">
+            <views:GameView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:EndOfGameViewModel}">
+            <views:EndOfGameView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:HowToPlayViewModel}">
+            <views:HowToPlayView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:HighScoreViewModel}">
+            <views:HighScoreView/>
+        </DataTemplate>
+
+    </Application.Resources>
+</Application>

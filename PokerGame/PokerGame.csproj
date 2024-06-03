@@ -1,0 +1,152 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>PokerGame</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Styles\**" />
+    <EmbeddedResource Remove="Styles\**" />
+    <None Remove="Styles\**" />
+    <Page Remove="Styles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Cursor\xCard.cur" />
+    <None Remove="Resources\ImagesCards\Clubs Ace.png" />
+    <None Remove="Resources\ImagesCards\Clubs Eight.png" />
+    <None Remove="Resources\ImagesCards\Clubs Five.png" />
+    <None Remove="Resources\ImagesCards\Clubs Four.png" />
+    <None Remove="Resources\ImagesCards\Clubs Jack.png" />
+    <None Remove="Resources\ImagesCards\Clubs King.png" />
+    <None Remove="Resources\ImagesCards\Clubs Nine.png" />
+    <None Remove="Resources\ImagesCards\Clubs Queen.png" />
+    <None Remove="Resources\ImagesCards\Clubs Seven.png" />
+    <None Remove="Resources\ImagesCards\Clubs Six.png" />
+    <None Remove="Resources\ImagesCards\Clubs Ten.png" />
+    <None Remove="Resources\ImagesCards\Clubs Three.png" />
+    <None Remove="Resources\ImagesCards\Clubs Two.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Ace.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Eight.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Five.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Four.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Jack.png" />
+    <None Remove="Resources\ImagesCards\Diamonds King.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Nine.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Queen.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Seven.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Six.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Ten.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Three.png" />
+    <None Remove="Resources\ImagesCards\Diamonds Two.png" />
+    <None Remove="Resources\ImagesCards\Hearts Ace.png" />
+    <None Remove="Resources\ImagesCards\Hearts Eight.png" />
+    <None Remove="Resources\ImagesCards\Hearts Five.png" />
+    <None Remove="Resources\ImagesCards\Hearts Four.png" />
+    <None Remove="Resources\ImagesCards\Hearts Jack.png" />
+    <None Remove="Resources\ImagesCards\Hearts King.png" />
+    <None Remove="Resources\ImagesCards\Hearts Nine.png" />
+    <None Remove="Resources\ImagesCards\Hearts Queen.png" />
+    <None Remove="Resources\ImagesCards\Hearts Seven.png" />
+    <None Remove="Resources\ImagesCards\Hearts Six.png" />
+    <None Remove="Resources\ImagesCards\Hearts Ten.png" />
+    <None Remove="Resources\ImagesCards\Hearts Three.png" />
+    <None Remove="Resources\ImagesCards\Hearts Two.png" />
+    <None Remove="Resources\ImagesCards\Spades Ace.png" />
+    <None Remove="Resources\ImagesCards\Spades Eight.png" />
+    <None Remove="Resources\ImagesCards\Spades Five.png" />
+    <None Remove="Resources\ImagesCards\Spades Four.png" />
+    <None Remove="Resources\ImagesCards\Spades JAck.png" />
+    <None Remove="Resources\ImagesCards\Spades King.png" />
+    <None Remove="Resources\ImagesCards\Spades Nine.png" />
+    <None Remove="Resources\ImagesCards\Spades Queen.png" />
+    <None Remove="Resources\ImagesCards\Spades Seven.png" />
+    <None Remove="Resources\ImagesCards\Spades Six.png" />
+    <None Remove="Resources\ImagesCards\Spades Ten.png" />
+    <None Remove="Resources\ImagesCards\Spades Three.png" />
+    <None Remove="Resources\ImagesCards\Spades Two.png" />
+    <None Remove="Resources\ImagesCards\CardBack.png" />
+    <None Remove="Resources\ImagesCards\CardBackDisabled.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Cursor\xCard.cur" />
+    <Resource Include="Resources\ImagesCards\Clubs Ten.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Ten.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Ten.png" />
+    <Resource Include="Resources\ImagesCards\Spades Ten.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Two.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Two.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Two.png" />
+    <Resource Include="Resources\ImagesCards\Spades Two.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Three.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Three.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Three.png" />
+    <Resource Include="Resources\ImagesCards\Spades Three.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Four.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Four.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Four.png" />
+    <Resource Include="Resources\ImagesCards\Spades Four.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Five.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Five.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Five.png" />
+    <Resource Include="Resources\ImagesCards\Spades Five.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Six.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Six.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Six.png" />
+    <Resource Include="Resources\ImagesCards\Spades Six.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Seven.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Seven.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Seven.png" />
+    <Resource Include="Resources\ImagesCards\Spades Seven.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Eight.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Eight.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Eight.png" />
+    <Resource Include="Resources\ImagesCards\Spades Eight.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Nine.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Nine.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Nine.png" />
+    <Resource Include="Resources\ImagesCards\Spades Nine.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Ace.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Ace.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Ace.png" />
+    <Resource Include="Resources\ImagesCards\Spades Ace.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Jack.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Jack.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Jack.png" />
+    <Resource Include="Resources\ImagesCards\Spades Jack.png" />
+    <Resource Include="Resources\ImagesCards\Clubs King.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds King.png" />
+    <Resource Include="Resources\ImagesCards\Hearts King.png" />
+    <Resource Include="Resources\ImagesCards\Spades King.png" />
+    <Resource Include="Resources\ImagesCards\Clubs Queen.png" />
+    <Resource Include="Resources\ImagesCards\Diamonds Queen.png" />
+    <Resource Include="Resources\ImagesCards\Hearts Queen.png" />
+    <Resource Include="Resources\ImagesCards\Spades Queen.png" />
+    <Resource Include="Resources\ImagesCards\CardBack.png" />
+    <Resource Include="Resources\ImagesCards\CardBackDisabled.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Sounds\GameSounds.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GameSounds.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Sounds\GameSounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GameSounds.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

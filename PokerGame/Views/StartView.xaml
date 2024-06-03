@@ -1,0 +1,151 @@
+﻿<local:MasterGameView x:Class="PokerGame.Views.StartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PokerGame.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+   
+    <Grid>
+               
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <!--Кольори-->
+        <Grid.Background>
+            <RadialGradientBrush
+
+                GradientOrigin="0.5,0.5"
+                Center="0.5,0.5"
+                RadiusX="0.7" RadiusY="0.5">
+
+                <RadialGradientBrush.GradientStops>
+                    <GradientStop Color="#FF075BAB" Offset="0.2" />
+                    <GradientStop Color="#002A60" Offset="1.1" />
+                </RadialGradientBrush.GradientStops>
+
+            </RadialGradientBrush>
+        </Grid.Background>
+                
+        <!--Заголовок-->
+        <TextBlock Text="♠ FIVE CARD DRAW POKER ♥" FontSize="60" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI light" Foreground="white"/>
+        
+        <!--Вибір гравця-->
+        <Border  Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3" Margin="20,15,15,0" BorderBrush="#002A30" BorderThickness="8"/>
+       
+        <!--Створення гравця-->
+        <Border  Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3" Margin="20,15,15,0" BorderBrush="#002A30" BorderThickness="8"/>
+        
+        <Label Content="Або" FontSize="18" FontStyle="Oblique" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+
+        <!--Вибір гравця-->
+        <StackPanel Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="25" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label Content="Вибрати гравця" FontSize="22" Margin="5" FontWeight="DemiBold" FontFamily="Segoe UI" Foreground="White"/>            
+            <ListBox x:Name="lstBoxPlayer" Width="215" Background="Transparent" Foreground="White" BorderBrush="Transparent" FontSize="15" FontFamily="Segoe UI light" ItemsSource="{Binding Players}" SelectedItem="{Binding SelectedPlayer}" Margin="5" Height="250" Grid.Row="4"/>
+        </StackPanel>
+
+        <!--Створення та видалення гравця-->
+        <StackPanel Grid.Row="2" Grid.Column="5"  Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="25" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label Content="Створити гравця" FontSize="22" FontWeight="DemiBold" Margin="5" FontFamily="Segoe UI" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBox x:Name="txtBoxCreatePlayer" Grid.Row="4" Grid.Column="4" Text="{Binding NewPlayer}" Margin="5" Height="30"/>
+            <Button x:Name="btnCreatePlayer" Grid.Row="5" Grid.Column="4" Content="Створити гравця" FontSize="20" Command="{Binding CreatePlayerCommand}" Margin="5" Height="32" Background="#1565C0" Foreground="White" BorderBrush="#0D47A1">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="1" Opacity="0.8" />
+                </Button.BitmapEffect>
+            </Button>
+            <Button x:Name="btnDeletePlayer" Grid.Row="5" Grid.Column="4" Content="Видалити вибраного гравця" FontSize="20" Command="{Binding DeletePlayerCommand}" Margin="5" Height="32" Background="#1565C0" Foreground="White" BorderBrush="#0D47A1">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="1" Opacity="0.8" />
+                </Button.BitmapEffect>
+            </Button>
+        </StackPanel>
+        
+        <!--Вибір складності-->
+        <StackPanel Grid.Row="5" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" >
+            <Label Content="Виберіть складність" FontSize="22" FontWeight="DemiBold" FontFamily="Segoe UI" Foreground="White"/>
+            <ComboBox  ItemsSource="{Binding DifficultyDictionary}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding SelectedDifficulty}" Height="30" Margin="5"/>
+        </StackPanel>
+        
+        <!--Кнопка початку гри-->
+        <StackPanel Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="2">
+            <Button x:Name="btnStartGame" Command="{Binding UpdateViewAndSaveDataCommand}"  Width="auto" Height="50" Margin="5" 
+            Content="ПОЧАТИ ГРУ" FontSize="25" FontFamily="Segoe UI light" Background="#1565C0" Foreground="White" BorderBrush="#0D47A1">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="1" Opacity="0.8" />
+                </Button.BitmapEffect>
+            </Button>
+        </StackPanel>
+        <!--Меню правил-->
+        <StackPanel Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Command="{Binding RulesCommand}"
+                     Width="300" Height="50" Margin="5" 
+                        Content="Правила гри" FontSize="25" FontFamily="Segoe UI light" Background="#1565C0" Foreground="White" BorderBrush="#0D47A1" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+            <Button.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="1" Opacity="0.8" />
+            </Button.BitmapEffect>
+        </Button>
+        </StackPanel>
+
+        <!--Відображення помилок та попереджень-->
+        <Label x:Name="lblAlrdyExist" Content="{Binding FeedbackString}" Grid.Row="5" Grid.Column="3" FontSize="18" Grid.ColumnSpan="4" Foreground="White" HorizontalAlignment="Center"/>
+        
+        <StackPanel Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Command="{Binding HighScoreListsCommand}"
+                     Width="300" Height="50" Margin="5" 
+                        Content="Рейтингова таблиця" FontSize="25" FontFamily="Segoe UI light" Background="#1565C0" Foreground="White" BorderBrush="#0D47A1" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="1" Opacity="0.8" />
+                </Button.BitmapEffect>
+            </Button>
+        </StackPanel>
+
+        <ContentControl Content="{Binding SelectedViewModel}" Grid.ColumnSpan="10" Grid.RowSpan="9"/>
+    </Grid>
+</local:MasterGameView>
